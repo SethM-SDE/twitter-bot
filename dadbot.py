@@ -29,7 +29,7 @@ def new_tweet(tweet_body):
 
 
 # function to log errors/exceptions
-def log_to_file(API, error):
+def log_to_file(api, error):
     # create (if necessary) and append errors to log file
     with open(ERROR_LOG, 'a+') as log_file:
         log_file.write(f'{datetime.now().strftime("%d/%m/%y %H:%M:%S")} API error: {error}')
@@ -116,7 +116,7 @@ def main():
             try:
                 # create new tweet with tweet input (commented out until full publish)
                 new_tweet(tweet_input[1])
-            except tweepy.error.TweepError():
+            except tweepy.error.TweepError('duplicate tweet'):
                 log_to_file('Tweepy', 'duplicate tweet')
                 tries += 1
                 continue
