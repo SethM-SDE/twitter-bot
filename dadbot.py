@@ -120,8 +120,8 @@ def main():
                 log_to_file('Tweepy', 'duplicate tweet')
                 tries += 1
                 continue
-            # print tweet_input for visual confirmation
-            print(tweet_input[1])
+            # print tweet_input for visual confirmation in troubleshooting
+            # print(tweet_input[1])
             # change len_check to false to break loop
             len_check = False
         else:
